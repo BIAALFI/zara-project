@@ -46,5 +46,6 @@ public class RecoverPasswordPage extends BasePage {
     public void clickOnAcceptButton() {
         LOG.info("Clicking on accept button");
         driver.findElement(clickOnAcceptButton).click();
+        //bibi
     }
 }
