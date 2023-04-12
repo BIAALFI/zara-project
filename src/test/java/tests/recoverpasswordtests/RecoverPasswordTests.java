@@ -20,18 +20,14 @@ public class RecoverPasswordTests extends BaseTest {
 
     @Test
     public void isResetPasswordMessageDidplayed() {
-        //landingPage.clickOnAcceptCookie();
-        //landingPage.clickLogInButton();
-        //recoverPasswordPage.isResetPaswordMessageDisplayed();       /////////reminder pasi in test
-        //logInPage.clickOnForgottenPasswordButton();
+
         recoverPasswordPage.isResetPaswordMessageDisplayed();
         BasePage.sleep(2000);
         recoverPasswordPage.typeInResetEmailField(emailreset);
         BasePage.sleep(2000);
-        recoverPasswordPage.clickOnContinueButton();
+        recoverPasswordPage.clickOnContinueButton(); ///////// aici o sa fiu dusa pe SESSION EXPIRED PAGE//// anti bot protection!
         recoverPasswordPage.clickOnContinueButton();
         BasePage.sleep(2000);
         //recoverPasswordPage.clickOnAcceptButton(); //// nu merge de la ei!
-
     }
 }

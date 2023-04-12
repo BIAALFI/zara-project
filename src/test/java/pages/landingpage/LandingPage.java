@@ -83,7 +83,7 @@ public class LandingPage extends BasePage {
         driver.findElement(logInButton).click();
     }
 
-    public void clickHmaburgerButton() {
+    public void clickHamburgerButton() {
         LOG.info("Clicking the hamburger Button");
         driver.findElement(hamburgerButton).click();
 
@@ -130,5 +130,12 @@ public class LandingPage extends BasePage {
         LOG.info("Tableware button is clicked in dining room section");
         driver.findElement(tableWareButton).click();
     }
+
+
+    public void clickingTheSearchButton() {
+        LOG.info("Clicking the Search button");
+        driver.findElement(searchField).click();
+    }
+
 
 }

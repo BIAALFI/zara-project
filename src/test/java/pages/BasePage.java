@@ -37,11 +37,7 @@ public class BasePage {
 
     public static String getBaseUrl() {
         String baseUrl = returnBaseUrl();
-        if (baseUrl != null) {
-            return baseUrl.replace("Index.html", "");
-        }
         return baseUrl;
-
     }
 
     public static void sleep(long ms) {

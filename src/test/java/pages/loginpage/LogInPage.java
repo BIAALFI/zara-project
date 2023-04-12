@@ -27,6 +27,7 @@ public class LogInPage extends BasePage {
     public final By logInButton = By.xpath("//button[@class='zds-button zds-button--primary']");
     public final By forgottenPasswordButton = By.xpath("//a[@class='action-link logon-view__link link']");
     public final By registerButton = By.xpath("(//button[@role='button'])[2]");
+    private final By zaraLogoOnLogInPage = By.xpath("//a[@aria-label='ZARA Romania logo.']");
 
 
     public void isLogInToYourAccSectionDiplayed() {
@@ -62,4 +63,9 @@ public class LogInPage extends BasePage {
         driver.findElement(registerButton).click();
     }
 
+    public void clickOnZaraLogoOnLogInPage() {
+        LOG.info("Clicking the zara logo on the LOG In Page");
+        driver.findElement(zaraLogoOnLogInPage).click();
+
+    }
 }

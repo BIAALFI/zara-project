@@ -8,6 +8,8 @@ import pages.landingpage.LandingPage;
 import pages.loginpage.LogInPage;
 import pages.recoverpasswordpage.RecoverPasswordPage;
 import pages.registerpage.RegisterPage;
+import pages.searchpage.SearchPage;
+import pages.sessionexpiredpage.SessionExpiredPage;
 
 
 public class BaseTest {
@@ -17,6 +19,8 @@ public class BaseTest {
     public LogInPage logInPage = LogInPage.getInstance();
     public RecoverPasswordPage recoverPasswordPage = RecoverPasswordPage.getInstance();
     public RegisterPage registerPage = RegisterPage.getInstance();
+    public SessionExpiredPage sessionExpiredPage = SessionExpiredPage.getInstance();
+    public SearchPage searchPage = SearchPage.getInstance();
 
     @BeforeSuite
     public void init() {

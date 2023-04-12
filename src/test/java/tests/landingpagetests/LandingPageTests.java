@@ -1,57 +1,30 @@
 package tests.landingpagetests;
 
 import org.testng.annotations.Test;
+import pages.BasePage;
 import tests.BaseTest;
+
+import static pages.BasePage.driver;
+import static pages.BasePage.getBaseUrl;
 
 
 public class LandingPageTests extends BaseTest {
-    //TODO: IMI FAC TOT INTR UN SINGUR TEST!!!
+
+    private String egal = getBaseUrl();
 
 
     @Test
-    public void isZaraHomePageDisplayed() {
+    public void testingLandingPageFunctionalities() {
+
         landingPage.isLogoDisplayed();
-    }
-
-    @Test
-    public void isTheHamburgerButtonDisplayed() {
         landingPage.isHamburgerButtonDisplayed();
-    }
-
-    @Test
-    public void isLogInButtonDisplayed() {
         landingPage.isLogInButtonDisplayedd();
-    }
-
-    @Test
-    public void isSearchFieldDisplayed() {
         landingPage.isSearchFieldDisplayed();
-    }
-
-    @Test
-    public void isHelpButtonDisplayed() {
         landingPage.isHelpButtonDisplayed();
-    }
-
-    @Test
-    public void isTheBasketLogoDisplayed() {
         landingPage.isBasketLogoDisplayed();
-    }
-
-    @Test
-    public void isAccessibilityButtonDisplayed() {
+        landingPage.isBasketLogoDisplayed();
         landingPage.isAccessibilityButtonDisplayed();
-    }
-
-    @Test
-    public void clickingTheHamburgerButton() {
-        landingPage.clickHmaburgerButton();
-    }
-
-    @Test
-    public void openingHamburgerButton() {
-        landingPage.clickOnAcceptCookie();
-        landingPage.clickHmaburgerButton();
+        landingPage.clickHamburgerButton();
         landingPage.isWomanButtonDsiapalyedInHmgButton();
         landingPage.isManButtonDsiapalyedInHmgButton();
         landingPage.isKidsButtonDsiapalyedInHmgButton();
@@ -60,6 +33,9 @@ public class LandingPageTests extends BaseTest {
         landingPage.clickingHomeButtonInHmgButton();
         landingPage.clickingDiningRoomSectionInHomeButton();
         landingPage.clickingTablewareButtonInDiningRoomSection();
+        driver.get(egal);
+        BasePage.sleep(2000);
+        landingPage.clickingTheSearchButton();
     }
 
 }

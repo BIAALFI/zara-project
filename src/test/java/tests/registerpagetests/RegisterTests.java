@@ -11,15 +11,10 @@ public class RegisterTests extends BaseTest {
     String namefield = "Bianca";
     String surname = "Mircea";
 
-    @Test
-
-    public void isPersonalDetailsMsgDisplayed() {
-        registerPage.isPersonalDetailsMsgDisplayed();
-
-    }
 
     @Test
     public void fillRegisterinfo() {
+        registerPage.isPersonalDetailsMsgDisplayed();
         landingPage.clickOnAcceptCookie();
         landingPage.clickLogInButton();
         logInPage.clickOnRegisterButton();
@@ -28,9 +23,8 @@ public class RegisterTests extends BaseTest {
         registerPage.typeInRepeatPasswordField(passwordrepeat);
         registerPage.typeInNameField(namefield);
         registerPage.typeInSurnameField(surname);
-        registerPage.markCheckBox(); /////ajutor!!!
+        registerPage.markCheckBox();
         registerPage.clickOnCreateAccountButton();
         registerPage.isSearchFieldDisplayed();
-
     }
 }
