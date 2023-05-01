@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="testng" verbose="1">
+    <test name="Regression">
+        <classes>
+            <class name="tests.landingpagetests.LandingPageTests">
+            </class>
+            <class name="tests.loginpagetests.LogInPageTests">
+            </class>
+            <class name="tests.recoverpasswordtests.RecoverPasswordTests">
+            </class>
+            <class name="tests.registerpagetests.RegisterTests">
+            </class>
+            <class name="tests.searchtests.SearchTests">
+            </class>
+            <class name="tests.sessionexpiredtests.SessionExpiredTests">
+            </class>
+        </classes>
+    </test> <!-- Test -->
+</suite> <!-- Suite -->

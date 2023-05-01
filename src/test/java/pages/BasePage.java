@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit;
 
 public class BasePage {
 
-    private static final Logger LOG = LoggerFactory.getLogger(BasePage.class);
+    public static final Logger LOG = LoggerFactory.getLogger(BasePage.class);
     public static WebDriver driver;
 
     public static void setUp() {
@@ -22,8 +22,6 @@ public class BasePage {
 
         LOG.info("Open browser maximmize");
         driver.manage().window().maximize();
-//        Dimension dimension = new Dimension(1366, 768);
-//        driver.manage().window().setSize(dimension);
     }
 
     public static void tearDown() {
@@ -47,5 +45,5 @@ public class BasePage {
             e.printStackTrace();
         }
     }
-}
 
+}

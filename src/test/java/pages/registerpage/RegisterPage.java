@@ -1,14 +1,17 @@
 package pages.registerpage;
 
 import org.openqa.selenium.By;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import pages.BasePage;
 
 
 public class RegisterPage extends BasePage {
 
+    private RegisterPage() {
+
+    }
 
     public static RegisterPage getInstance() {
         if (instance == null) {
@@ -17,7 +20,6 @@ public class RegisterPage extends BasePage {
         return instance;
     }
 
-    public static final Logger LOG = LoggerFactory.getLogger(RegisterPage.class);
     public static RegisterPage instance;
 
 
@@ -33,10 +35,9 @@ public class RegisterPage extends BasePage {
 
 
     public void isPersonalDetailsMsgDisplayed() {
-        LOG.info("Is personal details msg displayed");
+        LOG.info("Is personal details message displayed");
         Assert.assertTrue(driver.findElement(personalDetailsMsg).isDisplayed());
     }
-
 
     public void typeInEmailField(String email) {
         LOG.info("Type in email field");
@@ -48,9 +49,9 @@ public class RegisterPage extends BasePage {
         driver.findElement(passwordField).sendKeys(password);
     }
 
-    public void typeInRepeatPasswordField(String passwordrepeat) {
+    public void typeInRepeatPasswordField(String passwordRepeat) {
         LOG.info("Type in repeat password field");
-        driver.findElement(repeatPassword).sendKeys(passwordrepeat);
+        driver.findElement(repeatPassword).sendKeys(passwordRepeat);
     }
 
     public void typeInNameField(String name) {
@@ -61,25 +62,23 @@ public class RegisterPage extends BasePage {
     public void typeInSurnameField(String surname) {
         LOG.info("Type in surname field");
         driver.findElement(surnameField).sendKeys(surname);
-        sleep(5000);
     }
 
     public void markCheckBox() {
+        WebDriverWait wait = new WebDriverWait(driver, 20);
+        wait.until(ExpectedConditions.presenceOfElementLocated(checkBox));
         LOG.info("Mark the checkbox");
         driver.findElement(checkBox).click();
-        sleep(5000);
     }
 
     public void clickOnCreateAccountButton() {
         LOG.info("Click the create account button");
         driver.findElement(createAccountButton).click();
-
     }
 
     public void isSearchFieldDisplayed() {
         LOG.info("Search field is displayed");
         Assert.assertTrue(driver.findElement(searchField).isDisplayed());
     }
-
 
 }

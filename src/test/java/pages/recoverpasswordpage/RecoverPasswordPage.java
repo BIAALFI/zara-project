@@ -1,14 +1,15 @@
 package pages.recoverpasswordpage;
 
 import org.openqa.selenium.By;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import pages.BasePage;
-import pages.registerpage.RegisterPage;
 
 public class RecoverPasswordPage extends BasePage {
+
     private RecoverPasswordPage() {
+
     }
 
     public static RecoverPasswordPage getInstance() {
@@ -18,7 +19,7 @@ public class RecoverPasswordPage extends BasePage {
         return instance;
     }
 
-    public static final Logger LOG = LoggerFactory.getLogger(RegisterPage.class);
+
     public static RecoverPasswordPage instance;
 
     private final By resetPasswordMessageIsDisplayed = By.xpath("//div[@class='content-header__info']");
@@ -27,24 +28,34 @@ public class RecoverPasswordPage extends BasePage {
     private final By clickOnAcceptButton = By.xpath("//div[@role='alertdialog']//button[@data-qa-id='message-close-success']");
 
 
-    public void isResetPaswordMessageDisplayed() {
-        LOG.info("Verify if reste password  is displayed");
+    public void isResetPasswordMessageDisplayed() {
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.presenceOfElementLocated(resetPasswordMessageIsDisplayed));
+        LOG.info("Verify if reset password  is displayed");
         Assert.assertTrue(driver.findElement(resetPasswordMessageIsDisplayed).isDisplayed());
     }
 
-    public void typeInResetEmailField(String emailreset) {
+    public void typeInResetEmailField(String emailReset) {
+        WebDriverWait wait = new WebDriverWait(driver, 20);
+        wait.until(ExpectedConditions.presenceOfElementLocated(resetEmailField));
+        BasePage.sleep(3000);
         LOG.info("Type in reset email field");
-        driver.findElement(resetEmailField).sendKeys(emailreset);
+        driver.findElement(resetEmailField).sendKeys(emailReset);
     }
 
     public void clickOnContinueButton() {
+        WebDriverWait wait = new WebDriverWait(driver, 20);
+        wait.until(ExpectedConditions.presenceOfElementLocated(clickContinueButton));
+        BasePage.sleep(3000);
         LOG.info("Clicking the continue button");
         driver.findElement(clickContinueButton).click();
-
     }
 
     public void clickOnAcceptButton() {
         LOG.info("Clicking on accept button");
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(clickOnAcceptButton));
         driver.findElement(clickOnAcceptButton).click();
     }
+
 }
