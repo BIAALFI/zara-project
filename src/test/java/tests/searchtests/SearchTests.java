@@ -3,6 +3,7 @@ package tests.searchtests;
 import org.testng.annotations.Test;
 import tests.BaseTest;
 
+import static pages.BasePage.driver;
 import static pages.BasePage.getBaseUrl;
 
 public class SearchTests extends BaseTest {
@@ -31,12 +32,12 @@ public class SearchTests extends BaseTest {
         searchPage.clickTheCloseBtnX();
         searchPage.clickDeliveryExchangeReturnButton();
         searchPage.clickTheCloseBtnX();
-//        searchPage.clickOnChatButton();
-//        searchPage.typeInsideTheChatField(chat);
-//        searchPage.sendMessageInChat();
-//        searchPage.closingTheChatPanel();
-//        searchPage.closingChatConfirmation();
-//        driver.get(egal);
+        searchPage.clickOnChatButton();
+        searchPage.typeInsideTheChatField(chat);
+        searchPage.sendMessageInChat();
+        searchPage.closingTheChatPanel();
+        searchPage.closingChatConfirmation();
+        driver.get(egal);
     }
 
 }
